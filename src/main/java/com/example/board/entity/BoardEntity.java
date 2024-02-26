@@ -38,14 +38,5 @@ public class BoardEntity extends BaseEntity{
     // html에서 받은 DTO로 담아온걸 거기에 담겨있는 값들을 Entity의 작성자 값으로
     // set하는것 (옮겨담는 작업)
     // 즉, html에서 담아온 DTO값을 Entity값으로 옮겨 담는 작업
-    public static BoardEntity toSaveEntity(BoardDTO boardDTO) {
-        BoardEntity boardEntity = new BoardEntity();
-        boardEntity.setBoardWriter(boardDTO.getBoardWriter());
-        boardEntity.setBoardPass(boardDTO.getBoardPass());
-        boardEntity.setBoardTitle(boardDTO.getBoardTitle());
-        boardEntity.setBoardContents(boardDTO.getBoardContents());
-        boardEntity.setBoardHits(0);
 
-        return boardEntity;
-    }
 }

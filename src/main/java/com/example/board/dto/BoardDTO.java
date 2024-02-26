@@ -18,6 +18,4 @@ public class BoardDTO {
     private int boardHits;
     private LocalDateTime boardCreatedTime;
     private LocalDateTime boardUpdateTime;
-
-
 }
