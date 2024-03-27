@@ -1,0 +1,80 @@
+.userList-header,
+.userList-Item {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.127);
+}
+
+.allCheckBox,
+.checkBox {
+  width: 50px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allCheckBox input,
+.checkBox input {
+  zoom: 1.4;
+}
+
+.header-name,
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 56px;
+  padding: 0xp 10px;
+}
+
+.header-age,
+.age {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 56px;
+  padding: 0xp 10px;
+}
+
+.header-join-date,
+.join-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 56px;
+  padding: 0xp 10px;
+}
+
+.header-department,
+.department {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 56px;
+  padding: 0xp 10px;
+}
+
+.header-actions,
+.actions-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 56px;
+  padding: 0xp 10px;
+}
+
+.actions-icon-img {
+  width: 20px;
+  height: 30px;
+  /* padding: 20px; */
+  background-image: url(../../assets/image/delete-icon.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

@@ -14,3 +14,4 @@ npm install react-quill
 
 npm install @mui/x-data-grid --save
 npm install @emotion/react @emotion/styled --save
+npm install @mui/icons-material @mui/x-data-grid @mui/x-data-grid-generator
