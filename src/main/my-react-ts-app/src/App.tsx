@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Router, Routes } from "react-router-dom";
-import UserList from "./views/userList";
-import UserList2 from "./views/userList2";
+import UserList from "./views/UserList";
+import UserList2 from "./views/UserList2";
 
 const App = () => {
   return (

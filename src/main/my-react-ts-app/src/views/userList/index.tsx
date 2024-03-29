@@ -1,3 +1,5 @@
+import PaginationExample from "../../components/Pagination";
+import Pagination from "../../components/Pagination1";
 import "./style.css";
 
 const UserList = () => {
@@ -26,8 +28,16 @@ const UserList = () => {
           <div className="actions-icon-img"></div>
         </div>
       </div>
+
+      <PaginationExample />
     </div>
   );
 };
 
 export default UserList;
+
+// 페이징 내용
+// const [datas, setDatas] = useState([]);
+// const [limit, setLimits] = useState(10);
+// const [page, setPage] = useState(1);
+// const offset = (page - 1) * limit; // 데이터 시작 번호
