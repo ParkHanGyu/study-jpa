@@ -1,11 +1,11 @@
 # 서버 포트 설정
 server:
-  port: 8087
+  port: 8080
 
 # H2
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/jpa2
+    url: jdbc:h2:tcp://localhost/~/sr
     username: sa
     password:
     driver-class-name: org.h2.Driver

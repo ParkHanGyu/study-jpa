@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const PaginationExample = () => {
   // 가상의 데이터 배열
   const [data, setData] = useState<string[]>(
-    Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`)
+    Array.from({ length: 49 }, (_, i) => `Item ${i + 1}`)
   );
 
   // 현재 페이지 번호를 나타내는 상태 변수

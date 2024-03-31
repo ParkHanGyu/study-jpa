@@ -1,43 +1,130 @@
-import PaginationExample from "../../components/Pagination";
-import Pagination from "../../components/Pagination1";
 import "./style.css";
+import { useEffect, useRef, useState } from "react";
+import { getUserList } from "../../apis";
+import { GetUserListResponseDto } from "../../apis/respons/user";
 
 const UserList = () => {
+  const [users, setUsers] = useState<GetUserListResponseDto[]>([]);
+
+  // 카테고리
+  const [categoryDrop, setCategoryDrop] = useState(false);
+  const searchInputRef = useRef<any>(null);
+  const toggleDropdown = () => {
+    setCategoryDrop(!categoryDrop);
+  };
+  const onDropdownCategory = () => {};
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getUserList();
+      console.log("useEffect result값 : " + result);
+      if (result && Array.isArray(result)) {
+        // 배열 타입인지 확인
+        setUsers(result);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="userList-wrap">
-      <div className="userList-header">
-        <div className="allCheckBox">
-          <input type="checkbox" />
+    <div id="userList-wrap">
+      <div className="userList-top">
+        <div className="userList-title">회원목록</div>
+      </div>
+      <div className="userList-mid">
+        <div className="userList-mid-left">
+          <div className="admin-menu-userList">회원목록</div>
+          <div className="admin-menu-announcement">공지사항</div>
+          <div className="admin-menu-post">게시글목록</div>
+          <div className="admin-menu-category">카테고리</div>
         </div>
-        <div className="header-name">Name</div>
-        <div className="header-age">Age</div>
-        <div className="header-join-date">Join Date</div>
-        <div className="header-department">Department</div>
-        <div className="header-actions">Actions</div>
+
+        <div className="userList-mid-right">
+          <div className="userList-classification">
+            <div className="userList-item-check-box">
+              <input type="checkbox" />
+            </div>
+            <div className="classification-id">ID</div>
+            <div className="classification-nickName">닉네임</div>
+            <div className="classification-name">사용자 이름</div>
+            <div className="classification-email">사용자 이메일</div>
+            <div className="classification-writerDate">등록일</div>
+            <div className="classification-authority">권한</div>
+
+            <div className="classification-actions">action</div>
+          </div>
+
+          <div className="userList-Item-box">
+            {users.map((user, index) => (
+              <div key={index} className="userList-Item">
+                <div className="checkBox">
+                  <input type="checkbox" />
+                </div>
+                <div className="userList-item-id">{user.id}</div>
+                <div className="userList-item-nickName">{user.nickname}</div>
+                <div className="userList-item-name">{user.name}</div>
+                <div className="userList-item-email">{user.email}</div>
+                <div className="userList-item-writerDate">
+                  {user.registerDate}
+                </div>
+                <div className="userList-item-authority">{user.admin}</div>
+                <div className="userList-item-action">
+                  <div className="actions-icon-img"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="userList-Item">
-        <div className="checkBox">
-          <input type="checkbox" />
-        </div>
-        <div className="name">{"Jennie Torres"}</div>
-        <div className="age">{"25"}</div>
-        <div className="join-date">{"2023-09-28"}</div>
-        <div className="department">{"asdfsdf"}</div>
-        <div className="actions-icon">
-          <div className="actions-icon-img"></div>
+      <div className="userList-bottom">
+        <div className="userList-bottom-top">
+          <div className="header-category">
+            <div className="header-category-dropdown" ref={searchInputRef}>
+              <div className="dropdown-box" onClick={toggleDropdown}>
+                <div className="dropdown_text">카테고리</div>
+                <div className="dropdown_icon"></div>
+              </div>
+              {categoryDrop && (
+                <div className="dropdown-content">
+                  <div
+                    className="dropdown-content-item"
+                    onClick={onDropdownCategory}
+                  >
+                    1
+                  </div>
+                  <div
+                    className="dropdown-content-item"
+                    onClick={onDropdownCategory}
+                  >
+                    1
+                  </div>
+                  <div
+                    className="dropdown-content-item"
+                    onClick={onDropdownCategory}
+                  >
+                    2
+                  </div>
+                  <div
+                    className="dropdown-content-item"
+                    onClick={onDropdownCategory}
+                  >
+                    oasidjf;oizsdjfo;zsdijzsd;foisjfd;szofdijzdf
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="userList-search">
+            <input type="text" placeholder="검색어 입력" />
+            <div className="userList-search-img"></div>
+          </div>
         </div>
       </div>
-
-      <PaginationExample />
     </div>
   );
 };
 
 export default UserList;
-
-// 페이징 내용
-// const [datas, setDatas] = useState([]);
-// const [limit, setLimits] = useState(10);
-// const [page, setPage] = useState(1);
-// const offset = (page - 1) * limit; // 데이터 시작 번호

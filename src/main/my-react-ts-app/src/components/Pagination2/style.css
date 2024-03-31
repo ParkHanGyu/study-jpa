@@ -1,0 +1,72 @@
+#pagination-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.pagination-change-link-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.pagination-change-link-text {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.icon-box-small {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-left-light-icon {
+  width: 90%;
+  height: 90%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url(../../assets/image/expand-left-light.png);
+}
+
+.expand-right-light-icon {
+  width: 90%;
+  height: 90%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url(../../assets/image/expand-rigth-light.png);
+}
+
+.pagination-divider {
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: default;
+}
+
+.pagination-text-active {
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: default;
+}
+
+.pagination-text {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  cursor: default;
+
+  cursor: pointer;
+}

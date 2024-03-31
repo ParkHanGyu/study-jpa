@@ -1,14 +1,13 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
 import UserList from "./views/UserList";
 import UserList2 from "./views/UserList2";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <UserList2 />
+    <Router>
       <UserList />
-    </>
+    </Router>
   );
 };
 

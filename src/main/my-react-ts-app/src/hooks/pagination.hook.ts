@@ -90,5 +90,14 @@ const usePagination = <T>(countPerPage: number) => {
 
 export default usePagination;
 
-// https://www.youtube.com/watch?v=S3YvpwyC-F4
-// 처음부터 보기
+// 개념
+// https://www.youtube.com/watch?v=WFaa58zcRHs&list=PLbq5jHjpmq7q-Td2jOXtpf7SD5c53RqXh&index=58
+
+// Hook 함수 작성
+//https://www.youtube.com/watch?v=zVwqr7mwQc8&list=PLbq5jHjpmq7q-Td2jOXtpf7SD5c53RqXh&index=59
+
+// 컴포넌트 작성
+// https://www.youtube.com/watch?v=S3YvpwyC-F4&list=PLbq5jHjpmq7q-Td2jOXtpf7SD5c53RqXh&index=60
+
+// 적용
+// https://www.youtube.com/watch?v=ShhFojPvPY4&list=PLbq5jHjpmq7q-Td2jOXtpf7SD5c53RqXh&index=61
