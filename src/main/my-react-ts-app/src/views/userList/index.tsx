@@ -47,9 +47,8 @@ const UserList = () => {
             </div>
             <div className="classification-id">ID</div>
             <div className="classification-nickName">닉네임</div>
-            <div className="classification-name">사용자 이름</div>
-            <div className="classification-email">사용자 이메일</div>
-            <div className="classification-writerDate">등록일</div>
+            <div className="classification-email">이메일</div>
+            <div className="classification-writerDate">가입일</div>
             <div className="classification-authority">권한</div>
 
             <div className="classification-actions">action</div>
@@ -63,7 +62,6 @@ const UserList = () => {
                 </div>
                 <div className="userList-item-id">{user.id}</div>
                 <div className="userList-item-nickName">{user.nickname}</div>
-                <div className="userList-item-name">{user.name}</div>
                 <div className="userList-item-email">{user.email}</div>
                 <div className="userList-item-writerDate">
                   {user.registerDate}

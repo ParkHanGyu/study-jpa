@@ -1,9 +1,11 @@
 package com.example.board.service.Impl;
 
+import com.example.board.dto.response.user.GetUserListResponse;
 import com.example.board.entity.User;
 import com.example.board.repository.UserRepository;
 import com.example.board.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +17,9 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> getAllUsers() {
+    public ResponseEntity<? super GetUserListResponse> getAllUsers() {
         System.out.println("UserServiceImpl getAllUsers() 보내는 값 : " + userRepository.findAll());
-        return userRepository.findAll();
+        return GetUserListResponse.success();
     }
 
     @Override
