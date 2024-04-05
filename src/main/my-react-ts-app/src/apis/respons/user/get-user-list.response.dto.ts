@@ -7,5 +7,5 @@ export default interface GetUserListResponseDto extends ResponseDto {
   email: string;
   registerDate: string;
   admin: boolean;
-  // userList: UserList[];
+  userList: UserList[];
 }

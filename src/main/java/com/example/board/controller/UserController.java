@@ -25,8 +25,10 @@ public class UserController {
 //        return userService.getAllUsers();
 //    }
 
-    @GetMapping("/get-login-user") // 로그인을 한 경우 회원 정보 클라이언트로 넘겨주기.
-    public ResponseEntity<? super GetUserListResponse> getLoginUser(){
+    @GetMapping("/api/users") // 로그인을 한 경우 회원 정보 클라이언트로 넘겨주기.
+    public ResponseEntity<? super GetUserListResponse> getAllUsers(){
+
+        System.out.println("컨트롤러에서 내보내는 값 : "+userService.getAllUsers());
         return userService.getAllUsers();
     }
 }

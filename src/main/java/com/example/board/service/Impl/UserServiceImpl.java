@@ -17,9 +17,10 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public ResponseEntity<? super GetUserListResponse> getAllUsers() {
-        System.out.println("UserServiceImpl getAllUsers() 보내는 값 : " + userRepository.findAll());
-        return GetUserListResponse.success();
+    public ResponseEntity<GetUserListResponse> getAllUsers() {
+        List<User> userList = userRepository.findAll();
+        System.out.println("UserServiceImpl getAllUsers() 보내는 값 : " + userList);
+        return GetUserListResponse.success(userList);
     }
 
     @Override

@@ -17,10 +17,10 @@ const UserList = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await getUserList();
-      console.log("useEffect result값 : " + result);
-      if (result && Array.isArray(result)) {
-        // 배열 타입인지 확인
-        setUsers(result);
+      if (result && Array.isArray(result.userList)) {
+        setUsers(result.userList);
+      } else {
+        console.error("Error fetching user list:", result);
       }
     };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { GetUserListResponseDto } from "./respons/user";
 import ResponseDto from "./respons/response.dto";
+import { UserList } from "../types/interface";
 
 const DOMAIN = "http://localhost:8080";
 const API_DOMAIN = `${DOMAIN}/api`;
@@ -11,13 +12,12 @@ export const getUserList = async () => {
   const result = await axios
     .get(USER_LIST_URL())
     .then((response) => {
-      const responseBody: GetUserListResponseDto = response.data;
+      const responseBody: UserList[] = response.data;
       return responseBody;
     })
     .catch((error) => {
       if (!error.response.data) return null;
-      const responseBody: ResponseDto = error.response.data;
-      return responseBody;
+      return error.response.data;
     });
   return result;
 };
